@@ -19,9 +19,6 @@ augroup END
 
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
-set undofile
-
 set nowrap
 set smartcase
 set incsearch
@@ -112,6 +109,13 @@ let g:ctrlp_use_caching=0
 " set leader key for special actions
 let mapleader=" "
 
+" Undotree 
+
+nnoremap <C-u> :UndotreeToggle<CR>
+
+set undodir=~/.vim/undodir
+set undofile
+
 " control window access -- incompatible with neovim settings?
 "nnoremap <leader>h :wincmd h<CR>
 "nnoremap <leader>j :wincmd j<CR>
@@ -123,9 +127,6 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
-
-" undo commands
-nnoremap <leader>u :UndotreeShow<CR>
 
 " autocomplete / definition jumps
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
